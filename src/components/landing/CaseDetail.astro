@@ -101,6 +101,18 @@ const key = (suffix: string) => `${contentPrefix}.${suffix}`;
             </a>
           )
         }
+        {
+          item.liveUrl && (
+            <a
+              href={item.liveUrl}
+              target="_blank"
+              rel="noreferrer"
+              class="text-xs tracking-tight text-accent-700 transition-colors hover:text-accent-900 dark:text-accent-400 dark:hover:text-accent-300"
+            >
+              Acessar projeto ↗
+            </a>
+          )
+        }
       </aside>
     </div>
 
@@ -110,7 +122,7 @@ const key = (suffix: string) => `${contentPrefix}.${suffix}`;
       height={930}
       src={defaultProjectImage}
       alt={`Imagem principal de ${item.title}`}
-      class="mt-12 aspect-[16/10] w-full object-cover object-center lg:mt-16"
+      class="mt-12 aspect-[16/10] w-full object-contain object-center lg:mt-16"
     />
 
     {
@@ -157,7 +169,7 @@ const key = (suffix: string) => `${contentPrefix}.${suffix}`;
                 height={1100}
                 src={defaultProjectImage}
                 alt={`Imagem lateral — ${contextBlock.heading}`}
-                class="aspect-[4/5] w-full object-cover object-center"
+                class="aspect-[4/5] w-full object-contain object-center"
               />
             </div>
           </div>
@@ -176,7 +188,7 @@ const key = (suffix: string) => `${contentPrefix}.${suffix}`;
                 height={700}
                 src={defaultProjectImage}
                 alt={`Imagem — ${processBlock.heading}`}
-                class="aspect-[5/4] w-full object-cover object-center"
+                class="aspect-[5/4] w-full object-contain object-center"
               />
             </div>
 
@@ -260,7 +272,7 @@ const key = (suffix: string) => `${contentPrefix}.${suffix}`;
             height={930}
             src={defaultProjectImage}
             alt={`Imagem final — ${resultBlock.heading}`}
-            class="mt-10 aspect-[16/9] w-full object-cover object-center lg:mt-12"
+            class="mt-10 aspect-[16/9] w-full object-contain object-center lg:mt-12"
           />
         </section>
       )

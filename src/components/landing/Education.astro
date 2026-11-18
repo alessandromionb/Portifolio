@@ -5,11 +5,35 @@ import { getContent } from "@/lib/getContent";
 
 const education = [
   {
-    period: "6º período — cursando",
-    title: "Sistemas de Informação",
+    period: "2024–2027 • 6º período — cursando",
+    title: "Sistemas de Informação — Bacharelado",
     description:
-      "Bacharelado no Instituto Federal do Espírito Santo (IFES).",
-    category: "Graduação",
+      "Instituto Federal do Espírito Santo (IFES).",
+    category: "Bacharelado",
+  },
+  {
+    period: "Emitido em jun. de 2026",
+    title: "Google Cybersecurity Professional Certificate",
+    description: "Google • Código: 5TCGBI3B0SMP",
+    category: "Certificado",
+    credentialUrl:
+      "https://www.coursera.org/account/accomplishments/specialization/5TCGBI3B0SMP",
+  },
+  {
+    period: "Emitido em jun. de 2026",
+    title: "Certified Ethical Hacker (CEH)",
+    description: "Cisco Networking Academy",
+    category: "Certificado",
+    credentialUrl:
+      "https://www.credly.com/badges/f1ede8a7-eaca-43ad-827d-37af17d2b96a",
+  },
+  {
+    period: "Emitido em dez. de 2025",
+    title: "CCNA: Introduction to Networks",
+    description: "Cisco Networking Academy",
+    category: "Certificado",
+    credentialUrl:
+      "https://www.credly.com/badges/8c3ebc0a-abca-437d-b5cf-524b51f53197/public_url",
   },
 ];
 const educationEyebrowDefault = "Formação acadêmica";
@@ -62,14 +86,26 @@ const educationEyebrowDefault = "Formação acadêmica";
                 {getContent(`education.${index}.title`, item.title)}
               </Text>
 
-              <Text
-                tag="p"
-                variant="textSM"
-                class="text-base-600 dark:text-base-300"
-                data-editable={`education.${index}.description`}
-              >
-                {getContent(`education.${index}.description`, item.description)}
-              </Text>
+              <div>
+                <Text
+                  tag="p"
+                  variant="textSM"
+                  class="text-base-600 dark:text-base-300"
+                  data-editable={`education.${index}.description`}
+                >
+                  {getContent(`education.${index}.description`, item.description)}
+                </Text>
+                {item.credentialUrl && (
+                  <a
+                    href={item.credentialUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    class="mt-2 inline-block text-xs text-base-600 underline underline-offset-4 transition-colors hover:text-accent-700 dark:text-base-300 dark:hover:text-accent-400"
+                  >
+                    Exibir credencial ↗
+                  </a>
+                )}
+              </div>
 
               <Text
                 tag="p"
