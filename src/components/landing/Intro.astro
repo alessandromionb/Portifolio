@@ -1,0 +1,24 @@
+---
+// Fundations
+import Text from "@/components/fundations/elements/Text.astro";
+import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+import { getContent } from "@/lib/getContent";
+
+const introDefault =
+  "Sou desenvolvedor e estudante de Sistemas de Informação no IFES. Em um projeto de extensão, desenvolvo aplicações mobile e trabalho com redes neurais para processamento e análise de dados. Minha base inclui Python, Node.js, JavaScript, React Native, Java, C e MySQL. Tenho interesse em engenharia de software aplicada à inteligência artificial e em transformar pesquisa em soluções úteis.";
+---
+
+<section>
+  <Wrapper variant="standard" class="pb-8 pt-40 lg:pt-80">
+    <div class="grid grid-cols-1 lg:grid-cols-4 items-start gap-y-8">
+      <Text
+        tag="h1"
+        variant="displayLG"
+        class="font-semibold leading-snug text-left tracking-tighter lg:col-span-2 text-base-900 dark:text-white lg:col-start-3"
+        data-editable="intro.text"
+      >
+        {getContent("intro.text", introDefault)}
+      </Text>
+    </div>
+  </Wrapper>
+</section>
